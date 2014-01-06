@@ -53,7 +53,7 @@ class Chef
       def normalize_ruby_string(ruby_string, user = new_resource.user, patch = new_resource.patch)
         return "system" if ruby_string == "system"
         fetched_ruby_string = StringCache.fetch(ruby_string, user)
-        return "#{fetched_ruby_string} --patch #{patch}" if patch
+        # return "#{fetched_ruby_string} --patch #{patch}" if patch
         fetched_ruby_string
       end
     end
